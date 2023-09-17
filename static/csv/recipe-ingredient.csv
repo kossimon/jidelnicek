@@ -1,0 +1,207 @@
+meal,recipe_name,ingredient,unit_amount,unit,alternative_amount,alternative_unit
+II. dinner,okurka a mrkev s jogurtem a semínky,skyr,120,g,,
+II. dinner,okurka a mrkev s jogurtem a semínky,salátová okurka,110,g,0.25,ks
+II. dinner,okurka a mrkev s jogurtem a semínky,lněných semínek,7,g,,
+II. dinner,okurka a mrkev s jogurtem a semínky,mrkve,40,g,,
+II. dinner,šunka sýr rajče,eidam,15,g,1,ks
+II. dinner,šunka sýr rajče,krůtí šunka,60,g,,
+II. dinner,šunka sýr rajče,rajče,200,g,2.5,ks
+II. dinner,šunkové humusové rolky,humus,30,g,,
+II. dinner,šunkové humusové rolky,kedlubna,150,g,2.5,ks
+II. dinner,šunkové humusové rolky,krůtí šunka,65,g,5.5,plátku
+II. dinner,malinový koktejl s tvarohem,maliny,50,g,,
+II. dinner,malinový koktejl s tvarohem,chia semínka,6,g,,
+II. dinner,malinový koktejl s tvarohem,odtučněný tvaroh,125,g,0.5,kelímku
+II. dinner,zelenina se šunkou a jogurtem,krůtí šunka,70,g,,
+II. dinner,zelenina se šunkou a jogurtem,bílý jogurt 3.5 %,50,g,4,TBSP
+II. dinner,zelenina se šunkou a jogurtem,mrkev,43,g,0.5,ks
+II. dinner,zelenina se šunkou a jogurtem,salátová okurka,40,g,0.25,ks
+lunch,Boloňské celozrnné špagety,olivový olej,15,ml,1.5,TBSP
+lunch,Boloňské celozrnné špagety,hovězí maso,120,g,,
+lunch,Boloňské celozrnné špagety,cibule,30,g,0.33,ks
+lunch,Boloňské celozrnné špagety,česnek,,,2,stroužky
+lunch,Boloňské celozrnné špagety,rajčata,137,g,1.5,ks
+lunch,Boloňské celozrnné špagety,bazalka,3,g,,
+lunch,Boloňské celozrnné špagety,oregáno,,,,špetka
+lunch,Boloňské celozrnné špagety,celozrné těstoviny,100,g,,
+lunch,Těstovinový salát s grilovaným kuřetem,kuřecí prsa,130,g,,
+lunch,Těstovinový salát s grilovaným kuřetem,olivový olej,15,ml,1.5,TBSP
+lunch,Těstovinový salát s grilovaným kuřetem,celozrnné těstoviny,100,g,,
+lunch,Těstovinový salát s grilovaným kuřetem,rajčata,82,g,1,ks
+lunch,Těstovinový salát s grilovaným kuřetem,zakysanka 12 %,50,g,,
+lunch,Těstovinový salát s grilovaným kuřetem,okurka,30,g,0.25,ks
+lunch,Těstovinový salát s grilovaným kuřetem,cibule,20,g,0.25,ks
+lunch,Hovězí na houbách s rýží,hovězí maso,143,g,,
+lunch,Hovězí na houbách s rýží,olivový olej,15,g,1,TBSP
+lunch,Hovězí na houbách s rýží,žampion,60,g,3,ks
+lunch,Hovězí na houbách s rýží,basmati rýže,94,g,8,TBSP
+lunch,Treska na zelenině s vařenými brambory,filet treska bez kůže,200,g,,
+lunch,Treska na zelenině s vařenými brambory,mražené fazolky,100,g,,
+lunch,Treska na zelenině s vařenými brambory,máslo,20,g,1,TBSP
+lunch,Treska na zelenině s vařenými brambory,brambory,200,g,1.5,ks
+lunch,Treska na zelenině s vařenými brambory,"směr mrkev, hrášek, kukuřice",200,g,,
+lunch,Treska na zelenině s vařenými brambory,olivový olej,8,ml,1.5,tsp
+lunch,"čočka s vejncem, šunkou a pečivem",slepičí vejce,80,g,1.5,ks
+lunch,"čočka s vejncem, šunkou a pečivem",zelená čočka,88,g,,
+lunch,"čočka s vejncem, šunkou a pečivem",krůtí šunka,50,g,4,ks
+lunch,"čočka s vejncem, šunkou a pečivem",cibule,30,g,0.33,ks
+lunch,"čočka s vejncem, šunkou a pečivem",ghí,18,g,1,TBSP
+lunch,"čočka s vejncem, šunkou a pečivem",žitný chléb,52,g,1,ks
+lunch,krůtí stripsy a zeleninový salát,krůtí prsa,115,g,,
+lunch,krůtí stripsy a zeleninový salát,kukuřičná mouka,86,g,,
+lunch,krůtí stripsy a zeleninový salát,slepičí vejce,80,g,1.5,ks
+lunch,krůtí stripsy a zeleninový salát,ledový salát,32,g,,
+lunch,krůtí stripsy a zeleninový salát,řepkový olej,15,ml,1,TBSP
+lunch,krůtí stripsy a zeleninový salát,ředkvičky,100,g,0.66,svazek
+lunch,hovězí s fazolkami a bramborovo batátovou kaší,hovězí roštěnec,166,g,,
+lunch,hovězí s fazolkami a bramborovo batátovou kaší,olivový olej,20,ml,1.5,TBSP
+lunch,hovězí s fazolkami a bramborovo batátovou kaší,mražené fazolky,200,g,,
+lunch,hovězí s fazolkami a bramborovo batátovou kaší,brambory,150,g,1.5,ks
+lunch,hovězí s fazolkami a bramborovo batátovou kaší,batát,150,g,0.33,ks
+lunch,těstoviny zapečené s masem,celozrnné těstoviny,106,g,,
+lunch,těstoviny zapečené s masem,olivový olej,7,g,1.5,tsp
+lunch,těstoviny zapečené s masem,krůtí maso,120,g,,
+lunch,těstoviny zapečené s masem,cibule šalotka,20,g,0.66,ks
+lunch,těstoviny zapečené s masem,smetana 12%,25,ml,1.5,TBSP
+lunch,těstoviny zapečené s masem,sýr lučina,30,g,,
+lunch,těstoviny zapečené s masem,rozmarýn,10,g,,
+snack,caprese,mozzarella light,60,g,0.5,ks
+snack,caprese,rajče,165,g,2,ks
+snack,caprese,celozrnný chléb,44,g,1,ks
+snack,bílý jogurt + zelenina,bílý jogurt 3.5 %,200,g,1.5,kelímku
+snack,bílý jogurt + zelenina,odtučněný tvaroh,40,g,1.5,TBSP
+snack,bílý jogurt + zelenina,červená paprika,133,g,1,ks
+snack,bílý jogurt + zelenina,mrkev,50,g,0.5,ks
+snack,bílý jogurt + vločky,bílý jogurt 3.5 %,250,g,1.5,kelímku
+snack,bílý jogurt + vločky,špaldové vločky,30,g,2,TBSP
+snack,cottage sýr se zeleninou,salátová okurka,100,g,0.25,ks
+snack,cottage sýr se zeleninou,polníček,43,g,2,hrsti
+snack,cottage sýr se zeleninou,sýr cottage,115,g,0.75,kelímku
+snack,cottage sýr se zeleninou,vařená červená řepa,177,g,,
+snack,"chléb s máslem, šunkou, mrkví",celozrnný chléb,48,g,1,krajíc
+snack,"chléb s máslem, šunkou, mrkví",máslo,7,g,1,tsp
+snack,"chléb s máslem, šunkou, mrkví",krůtí šunka,63,g,5.5,ks
+snack,"chléb s máslem, šunkou, mrkví",mrkev,80,g,0.75,ks
+snack,čokoládový termix s ovocem,odtučněný tvaroh,120,g,0.5,kelímku
+snack,čokoládový termix s ovocem,hořká čokoláda 78 %,18,g,0.2,ks
+snack,čokoládový termix s ovocem,hruška,117,g,1,ks
+snack,"cottage, cherry, pečivo",sýr cottage,111,g,0.66,kelímku
+snack,"cottage, cherry, pečivo",rajče,50,g,0.5,ks
+snack,tvaroh s kousky čokolády a ovocem,hořká čokoláda 78 %,20,g,0.25,ks
+snack,tvaroh s kousky čokolády a ovocem,nektarinka,135,g,1,ks
+snack,tvaroh s kousky čokolády a ovocem,odtučněný tvaroh,112,g,4.5,TBSP
+snack,vejce s chlebem a zeleninou,vejce,103,g,2,ks
+snack,vejce s chlebem a zeleninou,žitný chléb,51,g,1,ks
+snack,vejce s chlebem a zeleninou,rajče,40,g,0.5,ks
+snack,paprika s jogurtem a semínky,červená paprika,250,g,1.5,ks
+snack,paprika s jogurtem a semínky,skyr,100,g,,
+snack,paprika s jogurtem a semínky,slunečnicová semínka,15,g,1,TBSP
+I. dinner,krůtí s rajčaty a rýží,řepkový olej,10,ml,2,tsp
+I. dinner,krůtí s rajčaty a rýží,rajčata,125,g,1.5,ks
+I. dinner,krůtí s rajčaty a rýží,krůtí prsa,165,g,,
+I. dinner,krůtí s rajčaty a rýží,hnědá rýže,61,g,5,TBSP
+I. dinner,"chléb, šunka, zelenina, cottage",sýr cottage,120,g,0.75,kelímku
+I. dinner,"chléb, šunka, zelenina, cottage",rajčata,100,g,1.5,ks
+I. dinner,"chléb, šunka, zelenina, cottage",šunka,80,g,,
+I. dinner,"chléb, šunka, zelenina, cottage",žitný chleba,75,g,1.5,ks
+I. dinner,fazolový salát s olivami a tuňákem,vařené adzuki fazole,150,g,,
+I. dinner,fazolový salát s olivami a tuňákem,rajče,100,g,1,ks
+I. dinner,fazolový salát s olivami a tuňákem,zelené olivy,30,g,,
+I. dinner,fazolový salát s olivami a tuňákem,tuňák ve vlastní šťávě,110,g,,
+I. dinner,fazolový salát s olivami a tuňákem,ricotta,25,g,,
+I. dinner,fazolový salát s olivami a tuňákem,Olivový olej,7,ml,1.5,tsp
+I. dinner,celozrná tortila s tunákovou směsí,celozrná tortila,53,g,,
+I. dinner,celozrná tortila s tunákovou směsí,rajčatový protlak,25,g,1.5,TBSP
+I. dinner,celozrná tortila s tunákovou směsí,tuňák ve vlastní,97,g,,
+I. dinner,celozrná tortila s tunákovou směsí,mozzarella,40,g,,
+I. dinner,celozrná tortila s tunákovou směsí,kukuřice,30,g,,
+I. dinner,celozrná tortila s tunákovou směsí,cibule,21,g,0.25,ks
+I. dinner,celozrná tortila s tunákovou směsí,ledový salát,400,g,,
+I. dinner,salát s lososem a ricottou,rajčata,100,g,1.5,ks
+I. dinner,salát s lososem a ricottou,listový salát,100,g,,
+I. dinner,salát s lososem a ricottou,uzený losos,80,g,,
+I. dinner,salát s lososem a ricottou,ricotta,54,g,0.33,ks
+I. dinner,salát s lososem a ricottou,baby špenát,40,g,,
+I. dinner,salát s lososem a ricottou,žitný chleba,80,g,1.5,ks
+I. dinner,mrkvovo-šunková pomazánka,hovězí / krůtí šunka,80,g,5.5,ks
+I. dinner,mrkvovo-šunková pomazánka,jarní cibulka,40,g,2,ks
+I. dinner,mrkvovo-šunková pomazánka,mrkev,80,g,0.75,ks
+I. dinner,mrkvovo-šunková pomazánka,polotučný tvaroh,115,g,4.5,TBSP
+I. dinner,mrkvovo-šunková pomazánka,žitný knackebrot,52,g,5,ks
+I. dinner,mrkvovo-šunková pomazánka,olivový olej,3,ml,0.5,tsp
+I. dinner,čočka s vejcem,slepičí vejce,110,g,2,ks
+I. dinner,čočka s vejcem,mrkev,20,g,0.25,ks
+I. dinner,čočka s vejcem,červená čočka,103,g,,
+I. dinner,čočka s vejcem,petržel,50,g,0.33,ks
+I. dinner,senvič s ricottou a tuňákem,celozrnný chleba,117,g,2.5,ks
+I. dinner,senvič s ricottou a tuňákem,ricotta,80,g,5.5,TBSP
+I. dinner,senvič s ricottou a tuňákem,tuňák,80,g,,
+I. dinner,senvič s ricottou a tuňákem,listový salát,30,g,,
+I. dinner,senvič s ricottou a tuňákem,řeřicha,30,g,2,TBSP
+I. dinner,"talíř se šunkou, sýrem a zeleninou",krůtí šunka,100,g,1.5,balení
+I. dinner,"talíř se šunkou, sýrem a zeleninou",gouda,30,g,1,plátek
+I. dinner,"talíř se šunkou, sýrem a zeleninou",rajče,100,g,1,ks
+I. dinner,"talíř se šunkou, sýrem a zeleninou",salátová okurka,150,g,0.5,ks ?
+I. dinner,krůtí se salátem a ořechem,krůtí maso,160,g,,
+I. dinner,krůtí se salátem a ořechem,vlašský ořechy,5,g,1.5,ks
+I. dinner,krůtí se salátem a ořechem,grapegfruit,101,g,0.5,ks
+I. dinner,krůtí se salátem a ořechem,míchaný salát,170,g,0.66,misky
+I. dinner,krůtí se salátem a ořechem,bílý jogurt,20,g,1.5,TBSP
+I. dinner,krůtí se salátem a ořechem,olivový olej,3,ml,0.5,tsp
+I. dinner,krůtí se salátem a ořechem,citronová šťáva,10,ml,2,tsp
+I. dinner,krůtí se salátem a ořechem,brambory,180,g,3.5,ks
+breakfast,špaldový chléb se šunkou syrem a zeleninou,eidam 30 %,60,g,,
+breakfast,špaldový chléb se šunkou syrem a zeleninou,krůtí,55,g,4.5,ks
+breakfast,špaldový chléb se šunkou syrem a zeleninou,špaldový chleba,120,g,2.5,ks
+breakfast,špaldový chléb se šunkou syrem a zeleninou,rajčata,120,g,1.5,ks
+breakfast,špaldový chléb se šunkou syrem a zeleninou,římský salát,80,g,,
+breakfast,vaječná omeleta,slepičí vejce,93,g,2,ks
+breakfast,vaječná omeleta,bílek,55,g,2,ks
+breakfast,vaječná omeleta,eidam 30 %,20,g,1,ks
+breakfast,vaječná omeleta,krůtí šunka,25,g,2,ks
+breakfast,vaječná omeleta,olivový olej,5,ml,1,tsp
+breakfast,vaječná omeleta,červená paprika,140,g,1,ks
+breakfast,vaječná omeleta,celozrnný chleba,120,g,2.5,ks
+breakfast,chléb s e zelenivovou pomazánkou z ricotty,žitný chleba,120,g,2.5,ks
+breakfast,chléb s e zelenivovou pomazánkou z ricotty,ricotta,80,g,,
+breakfast,chléb s e zelenivovou pomazánkou z ricotty,ředkvičky,43,g,3,ks
+breakfast,chléb s e zelenivovou pomazánkou z ricotty,mrkev,55,g,0.5,ks
+breakfast,chléb s e zelenivovou pomazánkou z ricotty,eidam 30 %,70,g,4.5,ks
+breakfast,omelea s paprikou a pečivem,slepičí vejce,110,g,2.5,ks
+breakfast,omelea s paprikou a pečivem,vaječný bílek,110,g,3.5,ks
+breakfast,omelea s paprikou a pečivem,polotučné mléko,18,ml,1,TBSP
+breakfast,omelea s paprikou a pečivem,cibule,30,g,0.33,ks
+breakfast,omelea s paprikou a pečivem,červená paprika,150,g,1,ks
+breakfast,omelea s paprikou a pečivem,olivový olej,10,ml,1.5,tsp
+breakfast,omelea s paprikou a pečivem,celozrnný chleba,110,g,2,ks
+breakfast,pečivo s cottage a zeleninou,sýr cottage,200,g,,
+breakfast,pečivo s cottage a zeleninou,celozrnný chleba,120,g,2.5,ks
+breakfast,pečivo s cottage a zeleninou,salátová okurka,90,g,0.25,ks
+breakfast,mandlové palačinky s tvarohem,borůvky,130,g,,
+breakfast,mandlové palačinky s tvarohem,polotučný tvaroh,150,g,,
+breakfast,mandlové palačinky s tvarohem,javorový sirup,7,ml,1.5,tsp
+breakfast,mandlové palačinky s tvarohem,olivový olej,3,ml,0.5,tsp
+breakfast,mandlové palačinky s tvarohem,slepičí vejce,90,g,1.5,ks
+breakfast,mandlové palačinky s tvarohem,mandlové mléko,125,ml,,
+breakfast,mandlové palačinky s tvarohem,celozrnná špaldová mouka,40,g,2.5,TBSP
+breakfast,porridge s ovocem,ovesné vločky,80,g,,
+breakfast,porridge s ovocem,hruška,95,g,0.66,ks
+breakfast,porridge s ovocem,chia semínka,20,g,,
+breakfast,porridge s ovocem,odtučněný tvaroh,125,g,0.5,balení
+breakfast,porridge s ovocem,loupané mandle,13,g,,
+breakfast,vejce s chlebem a zeleninou,slepičí vejce,103,g,2,ks
+breakfast,vejce s chlebem a zeleninou,bílek,80,g,2.5,ks
+breakfast,vejce s chlebem a zeleninou,máslo,14,g,1,TBSP
+breakfast,vejce s chlebem a zeleninou,žitný chleba,100,g,2,ks
+breakfast,vejce s chlebem a zeleninou,paprika,250,g,1.5,ks
+breakfast,vejce s chlebem a zeleninou,krůtí šunka,70,g,6,ks
+breakfast,chleba s tvarohem s mandlemi a vejce,ředkvičky,85,g,0.5,svazku
+breakfast,chleba s tvarohem s mandlemi a vejce,pažitka,5,g,1.5,tsp
+breakfast,chleba s tvarohem s mandlemi a vejce,žitný chleba,115,g,2.5,ks
+breakfast,chleba s tvarohem s mandlemi a vejce,polotučný tvaroh,125,g,0.5,balení
+breakfast,chleba s tvarohem s mandlemi a vejce,mandle,20,g,,
+breakfast,chleba s tvarohem s mandlemi a vejce,slepičí vejce,55,g,1,ks
+breakfast,skyr s cerealiemi,hroznové víno,120,g,,
+breakfast,skyr s cerealiemi,Skyr,200,g,,
+breakfast,skyr s cerealiemi,granola (domácí),50,g,,
+breakfast,skyr s cerealiemi,vlašský ořechy,30,g,,
