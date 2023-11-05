@@ -22,56 +22,37 @@ def main():
     day_columns = st.columns(len(days))
     selected_days = [day_columns[i].checkbox(day, key=day) for i, day in enumerate(days)]
 
-    # Step 2: Meal Selection
+    # Step 2: Meal Selection - Adjusted to select meals for all days at once
+    st.subheader("Select meals for all chosen days:")
     meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
-
+    chosen_meals = {meal_time: None for meal_time in meal_times}  # This will store the chosen meals
+    
     if st.button("Random Selection"):
-        for day in days:
-            for meal_time in meal_times:
-                default_key = f"default_{day}_{meal_time}"
-                meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
-                st.session_state[default_key] = random.choice(meal_options[1:])
-
-    for i, day in enumerate(days):
-        if selected_days[i]:
-            st.subheader(f"Meals to cook on {day}")
-
-            # Create columns for each meal time
-            columns = st.columns(len(meal_times))
-
-            for j, meal_time in enumerate(meal_times):
-                with columns[j]:
-                    meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
-                    
-                    # Set a random default option only if it has not been set before
-                    default_key = f"default_{day}_{meal_time}"
-                    if default_key not in st.session_state:
-                        st.session_state[default_key] = random.choice(meal_options[1:])
-                    
-                    default_option = st.session_state[default_key]
-                    st.selectbox(f"{meal_time}", meal_options, index=meal_options.index(default_option), key=f"{day}_{meal_time}")
-
-
+        for meal_time in meal_times:
+            meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
+            chosen_meals[meal_time] = random.choice(meal_options[1:])  # Randomly choose a meal
+    
+    # Display selection options for each meal time
+    columns = st.columns(len(meal_times))
+    for j, meal_time in enumerate(meal_times):
+        with columns[j]:
+            meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
+            
+            # Display a selectbox for each meal time
+            chosen_meals[meal_time] = st.selectbox(f"{meal_time}", meal_options, key=f"select_{meal_time}")
+    
     # Step 3: Generate Shopping List
     if st.button("Make Shopping List"):
-        # Find the recipes chosen for each day and mealtime
         chosen_recipes = {}
     
         # Calculate the number of selected days (this is the new logic)
-        # No need to find the next cooking day anymore, just count the checked days
         selected_day_count = sum(selected_days)
     
-        for i, day in enumerate(days):
-            if selected_days[i]:
-                # Now, instead of calculating portions based on the next cooking day,
-                # simply use the number of selected days for portions
-                portions = selected_day_count
-    
-                for meal_time in meal_times:
-                    chosen_recipe = st.session_state.get(f"{day}_{meal_time}")
-                    if chosen_recipe and chosen_recipe != 'None':
-                        chosen_recipes.setdefault(chosen_recipe, 0)
-                        chosen_recipes[chosen_recipe] += portions
+        for meal_time, chosen_recipe in chosen_meals.items():
+            if chosen_recipe and chosen_recipe != 'None':
+                # Multiply the portions by the number of days selected
+                chosen_recipes.setdefault(chosen_recipe, 0)
+                chosen_recipes[chosen_recipe] += selected_day_count
 
         # List all chosen recipes and the number of portions for each
         st.subheader("Chosen Recipes and Portions")
