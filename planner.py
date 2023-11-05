@@ -20,7 +20,7 @@ def main():
 
     # Arrange checkboxes in a single row
     day_columns = st.columns(len(days))
-    selected_days = [day_columns[i].checkbox(day), key=day) for i, day in enumerate(days)]
+    selected_days = [day_columns[i].checkbox(day, key=day) for i, day in enumerate(days)]
 
     # Step 2: Meal Selection
     meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
