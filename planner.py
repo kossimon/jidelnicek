@@ -15,12 +15,12 @@ def main():
     cooking_for_maiia = st.checkbox("Cooking for Maiia", value=True)
 
     # Step 1: Day Selection
-    st.subheader("Select the days you want to cook:")
+    st.subheader("Select days:")
     days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
 
     # Arrange checkboxes in a single row
     day_columns = st.columns(len(days))
-    selected_days = [day_columns[i].checkbox(day, value=(day in ["WED", "SUN"]), key=day) for i, day in enumerate(days)]
+    selected_days = [day_columns[i].checkbox(day), key=day) for i, day in enumerate(days)]
 
     # Step 2: Meal Selection
     meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
@@ -56,25 +56,17 @@ def main():
     if st.button("Make Shopping List"):
         # Find the recipes chosen for each day and mealtime
         chosen_recipes = {}
-
-        # Create a circular list of days to find the next cooking day in a circular manner
-        circular_days = days * 2
-
+    
+        # Calculate the number of selected days (this is the new logic)
+        # No need to find the next cooking day anymore, just count the checked days
+        selected_day_count = sum(selected_days)
+    
         for i, day in enumerate(days):
             if selected_days[i]:
-                # Find the next cooking day
-                next_cooking_day = next((idx for idx, val in enumerate(selected_days[i+1:] + selected_days[:i], start=i+1) if val), None)
-                
-                if next_cooking_day is not None:
-                    next_cooking_day %= len(days)
-                else:
-                    next_cooking_day = i
-
-                # Calculate the number of portions needed
-                portions = (next_cooking_day - i + len(days)) % len(days)
-                if portions == 0:
-                    portions = len(days)
-
+                # Now, instead of calculating portions based on the next cooking day,
+                # simply use the number of selected days for portions
+                portions = selected_day_count
+    
                 for meal_time in meal_times:
                     chosen_recipe = st.session_state.get(f"{day}_{meal_time}")
                     if chosen_recipe and chosen_recipe != 'None':
