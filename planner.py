@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 
 # Load the provided CSV files to inspect their structure
-meals_df = pd.read_csv('/mnt/data/recipe-kcal.csv')
-recipes_df = pd.read_csv('/mnt/data/recipe-ingredient.csv')
+meals_df = pd.read_csv('static/csv/recipe-ingredient.csv')
+recipes_df = pd.read_csv('static/csv/recipe-ingredient.csv')
 
 # Display the first few rows of each dataframe to understand their structure
 meals_df_head = meals_df.head()
