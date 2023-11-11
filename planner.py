@@ -9,8 +9,6 @@ recipes_df = pd.read_csv('static/csv/recipe-ingredient.csv')
 meals_df_head = meals_df.head()
 recipes_df_head = recipes_df.head()
 
-meals_df_head, recipes_df_head
-
 # Function to calculate the total portions for a meal
 def calculate_total_portions(days, eaters):
     # Portion sizes per person per day
@@ -76,3 +74,6 @@ def meal_planner_app():
         # Display the shopping list
         st.subheader("Shopping List:")
         st.write(shopping_list.groupby('Ingredient').sum().reset_index())
+
+
+meal_planner_app()
