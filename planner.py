@@ -15,15 +15,17 @@ def main():
     cooking_for_maiia = st.checkbox("Cooking for Maiia", value=True)
 
     # Step 1: Day Selection
-    st.subheader("Select the days you want to cook:")
+    st.subheader("Select days:")
     days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
 
     # Arrange checkboxes in a single row
     day_columns = st.columns(len(days))
-    selected_days = [day_columns[i].checkbox(day, value=(day in ["WED", "SUN"]), key=day) for i, day in enumerate(days)]
+    selected_days = [day_columns[i].checkbox(day, key=day) for i, day in enumerate(days)]
 
-    # Step 2: Meal Selection
+    # Step 2: Meal Selection - Adjusted to select meals for all days at once
+    st.subheader("Select meals for all chosen days:")
     meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
+<<<<<<< HEAD
     meal_preferences = ["Maiia", "Simon", "Both"]
 
     if st.button("Random Selection"):
@@ -82,6 +84,36 @@ def main():
                     if chosen_recipe and chosen_recipe != 'None':
                         chosen_recipes.setdefault(chosen_recipe, 0)
                         chosen_recipes[chosen_recipe] += portions * eaters
+=======
+    chosen_meals = {meal_time: None for meal_time in meal_times}  # This will store the chosen meals
+    
+    if st.button("Random Selection"):
+        for meal_time in meal_times:
+            meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
+            chosen_meals[meal_time] = random.choice(meal_options[1:])  # Randomly choose a meal
+    
+    # Display selection options for each meal time
+    columns = st.columns(len(meal_times))
+    for j, meal_time in enumerate(meal_times):
+        with columns[j]:
+            meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
+            
+            # Display a selectbox for each meal time
+            chosen_meals[meal_time] = st.selectbox(f"{meal_time}", meal_options, key=f"select_{meal_time}")
+    
+    # Step 3: Generate Shopping List
+    if st.button("Make Shopping List"):
+        chosen_recipes = {}
+    
+        # Calculate the number of selected days (this is the new logic)
+        selected_day_count = sum(selected_days)
+    
+        for meal_time, chosen_recipe in chosen_meals.items():
+            if chosen_recipe and chosen_recipe != 'None':
+                # Multiply the portions by the number of days selected
+                chosen_recipes.setdefault(chosen_recipe, 0)
+                chosen_recipes[chosen_recipe] += selected_day_count
+>>>>>>> 5119b74c13c3a53e218d958200105ec2f091d167
 
         st.subheader("Chosen Recipes and Portions")
         for recipe, portions in chosen_recipes.items():
