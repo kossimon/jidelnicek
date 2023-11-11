@@ -24,6 +24,7 @@ def main():
 
     # Step 2: Meal Selection
     meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
+    meal_preferences = ["Maiia", "Simon", "Both"]
 
     if st.button("Random Selection"):
         for day in days:
@@ -43,50 +44,49 @@ def main():
                 with columns[j]:
                     meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
                     
-                    # Set a random default option only if it has not been set before
+                    # Select a meal
                     default_key = f"default_{day}_{meal_time}"
                     if default_key not in st.session_state:
                         st.session_state[default_key] = random.choice(meal_options[1:])
                     
                     default_option = st.session_state[default_key]
-                    st.selectbox(f"{meal_time}", meal_options, index=meal_options.index(default_option), key=f"{day}_{meal_time}")
+                    selected_meal = st.selectbox(f"{meal_time}", meal_options, index=meal_options.index(default_option), key=f"{day}_{meal_time}")
 
+                    # Select who will eat the meal
+                    preference_key = f"preference_{day}_{meal_time}"
+                    if preference_key not in st.session_state:
+                        st.session_state[preference_key] = "Both"  # Default to Both
+                    st.radio("Who will eat?", meal_preferences, key=preference_key)
 
     # Step 3: Generate Shopping List
     if st.button("Make Shopping List"):
-        # Find the recipes chosen for each day and mealtime
         chosen_recipes = {}
-
-        # Create a circular list of days to find the next cooking day in a circular manner
         circular_days = days * 2
 
         for i, day in enumerate(days):
             if selected_days[i]:
-                # Find the next cooking day
                 next_cooking_day = next((idx for idx, val in enumerate(selected_days[i+1:] + selected_days[:i], start=i+1) if val), None)
-                
                 if next_cooking_day is not None:
                     next_cooking_day %= len(days)
                 else:
                     next_cooking_day = i
 
-                # Calculate the number of portions needed
                 portions = (next_cooking_day - i + len(days)) % len(days)
                 if portions == 0:
                     portions = len(days)
 
                 for meal_time in meal_times:
                     chosen_recipe = st.session_state.get(f"{day}_{meal_time}")
+                    preference = st.session_state.get(f"preference_{day}_{meal_time}", "Both")
+                    eaters = 2 if preference == "Both" else 1
                     if chosen_recipe and chosen_recipe != 'None':
                         chosen_recipes.setdefault(chosen_recipe, 0)
-                        chosen_recipes[chosen_recipe] += portions
+                        chosen_recipes[chosen_recipe] += portions * eaters
 
-        # List all chosen recipes and the number of portions for each
         st.subheader("Chosen Recipes and Portions")
         for recipe, portions in chosen_recipes.items():
             st.write(f"{recipe}: {portions} portions")
 
-            # Show the amounts to use in the recipe
             recipe_ingredients = recipes_df[recipes_df['recipe_name'] == recipe]
             data = []
             for _, row in recipe_ingredients.iterrows():
@@ -94,7 +94,6 @@ def main():
                 si_amount = round(row['unit_amount'] * portions, 2)
                 alt_amount = "N/A" if row['alternative_amount'] == "N/A" else round(float(row['alternative_amount']) * portions, 2)
                 
-                # Applying the multiplier for "Cooking for Maiia"
                 if cooking_for_maiia:
                     si_amount *= 1.72
                     if alt_amount != "N/A":
@@ -109,7 +108,6 @@ def main():
             df = df.replace('N/A N/A', "N/A").replace('N/A 0.0', "N/A").replace('N/A nan', "N/A").replace('0.0 nan', "N/A").replace('nan', "")
             st.table(df)
 
-        # Generate the shopping list
         shopping_list = {}
         for recipe, portions in chosen_recipes.items():
             recipe_ingredients = recipes_df[recipes_df['recipe_name'] == recipe]
@@ -118,7 +116,6 @@ def main():
                 si_amount = round(row['unit_amount'] * portions, 2)
                 alt_amount = "N/A" if row['alternative_amount'] == "N/A" else round(float(row['alternative_amount']) * portions, 2)
                 
-                # Applying the multiplier for "Cooking for Maiia"
                 if cooking_for_maiia:
                     si_amount *= 1.72
                     if alt_amount != "N/A":
@@ -129,9 +126,7 @@ def main():
                 if alt_amount != "N/A":
                     shopping_list[ingredient]['alt'][0] += alt_amount
 
-        # Display the shopping list
         st.subheader("Shopping List")
-        
         data = []
         for ingredient, amounts in shopping_list.items():
             si_amount, si_unit = amounts['si']
@@ -142,13 +137,9 @@ def main():
             
             data.append([ingredient, f'{si_amount} {si_unit}', f'{alt_amount} {alt_unit}'])
 
-
         df = pd.DataFrame(data, columns=['Ingredient', 'SI Amount', 'Alternative Amount'])
         df = df.replace('N/A N/A', "").replace('N/A',"").replace('N/A nan',"")
         st.table(df)
 
-
 if __name__ == "__main__":
     main()
-
-
