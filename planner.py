@@ -21,6 +21,7 @@ def main():
     # Arrange checkboxes in a single row
     day_columns = st.columns(len(days))
     selected_days = [day_columns[i].checkbox(day, value=(day in ["WED", "SUN"]), key=day) for i, day in enumerate(days)]
+    print(selected_days)
 
     # Step 2: Meal Selection
     meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
@@ -91,7 +92,7 @@ def main():
             data = []
             for _, row in recipe_ingredients.iterrows():
                 ingredient = row['ingredient']
-                si_amount = round(row['unit_amount'] * portions, 2)
+                si_amount = round(row['unit_amount'] * portions * 1.1, 2)
                 alt_amount = "N/A" if row['alternative_amount'] == "N/A" else round(float(row['alternative_amount']) * portions, 2)
                 
                 # Applying the multiplier for "Cooking for Maiia"
