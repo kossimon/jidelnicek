@@ -30,7 +30,6 @@ def main():
 
     # Step 3: Display Meals
     for i, meal_time in enumerate(meal_times):
-        st.subheader(f"Meals to cook for {meal_time.capitalize()}")
         meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
 
         default_key = f"default_{meal_time}"
