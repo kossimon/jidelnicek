@@ -13,11 +13,12 @@ def main():
 
     # Adding a checkbox for "Cooking for Maiia"
     cooking_for_maiia = st.checkbox("Cooking for Maiia", value=True)
-
-    # Step 1: Slider for Meal Amounts
-    st.subheader("Select the amount of each meal:")
-    meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
-    meal_amounts = [st.slider(f"Amount of {meal}", min_value=0, max_value=7, value=3) for meal in meal_times]
+    expander_sliders = st.expander("Amount)
+    with expander_sliders:
+        # Step 1: Slider for Meal Amounts
+        st.subheader("Select the amount of each meal:")
+        meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
+        meal_amounts = [st.slider(f"Amount of {meal}", min_value=0, max_value=7, value=4) for meal in meal_times]
 
     # Step 2: Random Selection Button
     if st.button("Random Selection"):
