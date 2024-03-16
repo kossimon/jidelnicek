@@ -13,7 +13,7 @@ def main():
 
     # Adding a checkbox for "Cooking for Maiia"
     cooking_for_maiia = st.checkbox("Cooking for Maiia", value=True)
-    expander_sliders = st.expander("Amount)
+    expander_sliders = st.expander("Amount")
     with expander_sliders:
         # Step 1: Slider for Meal Amounts
         st.subheader("Select the amount of each meal:")
