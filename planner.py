@@ -14,15 +14,11 @@ def main():
     # Adding a checkbox for "Cooking for Maiia"
     cooking_for_maiia = st.checkbox("Cooking for Maiia", value=True)
 
-    # Step 1: Slider and Dropdown for Meal Amounts and Selection
-    st.subheader("Select the amount and recipe for each meal:")
+    # Step 1: Slider for Meal Amounts
+    st.subheader("Select the amount of each meal:")
     meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
-    for meal_time in meal_times:
-        st.write(f"### {meal_time.capitalize()}")
-        amount = st.slider(f"Amount of {meal_time}", min_value=0, max_value=7, value=3)
-        meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
-        chosen_recipe = st.selectbox(f"Select recipe for {meal_time}", meal_options)
-    
+    meal_amounts = [st.slider(f"Amount of {meal}", min_value=0, max_value=7, value=3) for meal in meal_times]
+
     # Step 2: Random Selection Button
     if st.button("Random Selection"):
         for i, meal_time in enumerate(meal_times):
@@ -65,7 +61,7 @@ def main():
             for _, row in recipe_ingredients.iterrows():
                 ingredient = row['ingredient']
                 si_amount = round(row['unit_amount'] * portions * 1.1, 2)
-                alt_amount = "N/A" if row['alternative_amount'] == "N/A" else round(float(row['alternative_amount']) * portions, 2)
+                alt_amount = "N/A" if row['alternative_amount'] == "N/A" else round(float(row['alternative_amount']) * portions * 1.1, 2)
                 
                 # Applying the multiplier for "Cooking for Maiia"
                 if cooking_for_maiia:
@@ -88,8 +84,8 @@ def main():
             recipe_ingredients = recipes_df[recipes_df['recipe_name'] == recipe]
             for _, row in recipe_ingredients.iterrows():
                 ingredient = row['ingredient']
-                si_amount = round(row['unit_amount'] * portions, 2)
-                alt_amount = "N/A" if row['alternative_amount'] == "N/A" else round(float(row['alternative_amount']) * portions, 2)
+                si_amount = round(row['unit_amount'] * portions * 1.1, 2)
+                alt_amount = "N/A" if row['alternative_amount'] == "N/A" else round(float(row['alternative_amount']) * portions * 1.1, 2)
                 
                 # Applying the multiplier for "Cooking for Maiia"
                 if cooking_for_maiia:
