@@ -17,7 +17,7 @@ def main():
     weekend = st.checkbox("Weekend")
 
     # Adjusting default meal amounts based on the "Weekend" checkbox
-    default_meal_amounts = [2 if weekend else 4] * 5  # Default to 2 for weekend, else default to 4
+    default_meal_amounts = [2 if weekend else 4]  # Default to 2 for weekend, else default to 4
    
     # Step 2: Random Selection Button
     if st.button("Random Selection"):
