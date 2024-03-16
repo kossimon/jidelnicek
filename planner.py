@@ -14,7 +14,7 @@ def main():
     # Adding a checkbox for "Cooking for Maiia"
     cooking_for_maiia = st.checkbox("Cooking for Maiia", value=True)
     # Adding a checkbox for "Weekend"
-    weekend = st.checkbox("Weekend (2)")
+    weekend = st.checkbox("Weekend")
 
     # Adjusting default meal amounts based on the "Weekend" checkbox
     default_meal_amounts = [2 if weekend else 4] * 5 # Default to 2 for weekend, else default to 4
