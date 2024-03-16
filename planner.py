@@ -18,14 +18,6 @@ def main():
 
     # Adjusting default meal amounts based on the "Weekend" checkbox
     default_meal_amounts = [2 if weekend else 4] * 5 # Default to 2 for weekend, else default to 4
-   
-    # Step 2: Random Selection Button
-    if st.button("Random Selection"):
-        for i, meal_time in enumerate(meal_times):
-            default_key = f"default_{meal_time}"
-            meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
-            st.session_state[default_key] = random.choice(meal_options[1:])
-            meal_amounts[i] = 1
     
     expander_sliders = st.expander("Amount")
     with expander_sliders:
