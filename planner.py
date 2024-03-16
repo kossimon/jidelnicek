@@ -17,7 +17,7 @@ def main():
     # Step 1: Slider for Meal Amounts
     st.subheader("Select the amount of each meal:")
     meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
-    meal_amounts = [st.slider(f"Amount of {meal}", min_value=0, max_value=7, value=3) for meal in meal_times]
+    meal_amounts = [st.slider(f"Amount of {meal}", min_value=0, max_value=7, value=4) for meal in meal_times]
 
     # Step 2: Random Selection Button
     if st.button("Random Selection"):
