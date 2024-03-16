@@ -13,12 +13,26 @@ def main():
 
     # Adding a checkbox for "Cooking for Maiia"
     cooking_for_maiia = st.checkbox("Cooking for Maiia", value=True)
+    # Adding a checkbox for "Weekend"
+    weekend = st.checkbox("Weekend")
+
+    # Adjusting default meal amounts based on the "Weekend" checkbox
+    default_meal_amounts = [2 if weekend else 4] * 5  # Default to 2 for weekend, else default to 4
+   
+    # Step 2: Random Selection Button
+    if st.button("Random Selection"):
+        for i, meal_time in enumerate(meal_times):
+            default_key = f"default_{meal_time}"
+            meal_options = ['None'] + meals_df[meals_df['meal'].str.lower() == meal_time.lower()]['recipe_name'].tolist()
+            st.session_state[default_key] = random.choice(meal_options[1:])
+            meal_amounts[i] = 1
+    
     expander_sliders = st.expander("Amount")
     with expander_sliders:
         # Step 1: Slider for Meal Amounts
         st.subheader("Select the amount of each meal:")
         meal_times = ["breakfast", "lunch", "snack", "I. dinner", "II. dinner"]
-        meal_amounts = [st.slider(f"Amount of {meal}", min_value=0, max_value=7, value=4) for meal in meal_times]
+        meal_amounts = [st.slider(f"Amount of {meal}", min_value=0, max_value=7, value=default_meal_amounts[i]) for i, meal in enumerate(meal_times)]
 
     # Step 2: Random Selection Button
     if st.button("Random Selection"):
