@@ -16,6 +16,7 @@ def main():
     karolina = 'Karolína'
 
     cooking_for = st.radio("Cooking for whom?", [simon_maiia, karolina],horizontal=True)
+    st.write(cooking_for)
     
     # Adding a checkbox for "Weekend"
     weekend = st.checkbox("Weekend")
@@ -104,10 +105,15 @@ def main():
                 alt_amount = "N/A" if row['alternative_amount'] == "N/A" else round(float(row['alternative_amount']) * portions * 1.1, 2)
                 
                 # Applying the multiplier for "Cooking for Maiia"
-                if cooking_for_maiia:
+                if cooking_for == simon_maiia:
                     si_amount *= 1.72
                     if alt_amount != "N/A":
                         alt_amount = round(alt_amount * 1.72, 2)
+                
+                elif cooking_for == karolina:
+                    si_amount *= 0.8
+                    if alt_amount != "N/A":
+                        alt_amount = round(alt_amount * 0.8, 2)
                 
                 shopping_list.setdefault(ingredient, {'si': [0, row['unit']], 'alt': [0, row['alternative_unit']]})
                 shopping_list[ingredient]['si'][0] += si_amount
