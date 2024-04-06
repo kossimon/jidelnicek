@@ -12,12 +12,10 @@ def main():
     st.title("Meal Planner")
 
     # Adding a checkbox for "Cooking for Maiia"
-    cooking_for_maiia = st.checkbox("Cooking for Maiia", value=True)
-    cooking_for_kaja = st.checkbox("Cooking for Kája", value=False)
+    simon_maiia = 'Šimon a Maiia'
+    karolina = 'Karolína'
 
-    if cooking_for_kaja == True:
-        cooking_form_maiia.value = False
-        # cooking_form_maiia.value = False
+    cooking_for = st.radio("Cooking for whom?", [simon_maiia, karolina],horizontal=True)
     
     # Adding a checkbox for "Weekend"
     weekend = st.checkbox("Weekend")
@@ -76,15 +74,16 @@ def main():
                 alt_amount = "N/A" if row['alternative_amount'] == "N/A" else round(float(row['alternative_amount']) * portions * 1.1, 2)
                 
                 # Applying the multiplier for "Cooking for Maiia"
-                if cooking_for_maiia:
+                if cooking_for == simon_maiia:
                     si_amount *= 1.72
                     if alt_amount != "N/A":
                         alt_amount = round(alt_amount * 1.72, 2)
-
-                if cooking_for_kaja:
+                
+                elif cooking_for == karolina:
                     si_amount *= 0.8
                     if alt_amount != "N/A":
                         alt_amount = round(alt_amount * 0.8, 2)
+
                 
                 si_amount = round(si_amount, 0) if not pd.isna(si_amount) and si_amount != 0 else "N/A"
                 alt_amount = round(alt_amount, 0) if alt_amount != "N/A" and alt_amount != 0 else "N/A"
