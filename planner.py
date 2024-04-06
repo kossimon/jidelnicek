@@ -13,6 +13,12 @@ def main():
 
     # Adding a checkbox for "Cooking for Maiia"
     cooking_for_maiia = st.checkbox("Cooking for Maiia", value=True)
+    cooking_for_kaja = st.checkbox("Cooking for Kája", value=False)
+
+    if cooking_for_kaja == True:
+        cooking_form_maiia = False
+        # cooking_form_maiia.value = False
+    
     # Adding a checkbox for "Weekend"
     weekend = st.checkbox("Weekend")
 
@@ -74,6 +80,11 @@ def main():
                     si_amount *= 1.72
                     if alt_amount != "N/A":
                         alt_amount = round(alt_amount * 1.72, 2)
+
+                if cooking_for_kaja:
+                    si_amount *= 0.8
+                    if alt_amount != "N/A":
+                        alt_amount = round(alt_amount * 0.8, 2)
                 
                 si_amount = round(si_amount, 0) if not pd.isna(si_amount) and si_amount != 0 else "N/A"
                 alt_amount = round(alt_amount, 0) if alt_amount != "N/A" and alt_amount != 0 else "N/A"
