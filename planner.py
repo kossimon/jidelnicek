@@ -16,7 +16,6 @@ def main():
     karolina = 'Karolína'
 
     cooking_for = st.radio("Cooking for whom?", [simon_maiia, karolina],horizontal=True)
-    st.write(cooking_for)
     
     # Adding a checkbox for "Weekend"
     weekend = st.checkbox("Weekend")
@@ -52,7 +51,7 @@ def main():
         st.session_state[default_key] = chosen_recipe
 
     # Step 4: Generate Shopping List
-    if st.button("Make Shopping List"):
+    if st.button(f"Make Shopping List for {cooking_for}"):
         # Find the recipes chosen for each meal
         chosen_recipes = {}
         for i, meal_time in enumerate(meal_times):
@@ -121,7 +120,7 @@ def main():
                     shopping_list[ingredient]['alt'][0] += alt_amount
 
         # Display the shopping list
-        st.subheader("Shopping List")
+        st.subheader(f"Shopping List for **{cooking_for}**")
         
         data = []
         for ingredient, amounts in shopping_list.items():
