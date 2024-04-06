@@ -16,7 +16,7 @@ def main():
     cooking_for_kaja = st.checkbox("Cooking for Kája", value=False)
 
     if cooking_for_kaja == True:
-        cooking_form_maiia = False
+        cooking_form_maiia.value = False
         # cooking_form_maiia.value = False
     
     # Adding a checkbox for "Weekend"
