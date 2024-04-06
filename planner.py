@@ -15,6 +15,9 @@ def main():
     simon_maiia = 'Šimon a Maiia'
     karolina = 'Karolína'
 
+    simon_maiia_multiplier = 1.65
+    karolina_multiplier = 0.7
+
     cooking_for = st.radio("Cooking for whom?", [simon_maiia, karolina],horizontal=True)
     
     # Adding a checkbox for "Weekend"
@@ -75,14 +78,14 @@ def main():
                 
                 # Applying the multiplier for "Cooking for Maiia"
                 if cooking_for == simon_maiia:
-                    si_amount *= 1.72
+                    si_amount *= 1.65
                     if alt_amount != "N/A":
-                        alt_amount = round(alt_amount * 1.72, 2)
+                        alt_amount = round(alt_amount * simon_maiia_multiplier, 2)
                 
                 elif cooking_for == karolina:
                     si_amount *= 0.8
                     if alt_amount != "N/A":
-                        alt_amount = round(alt_amount * 0.8, 2)
+                        alt_amount = round(alt_amount * karolina_multiplier, 2)
 
                 
                 si_amount = round(si_amount, 0) if not pd.isna(si_amount) and si_amount != 0 else "N/A"
@@ -107,12 +110,12 @@ def main():
                 if cooking_for == simon_maiia:
                     si_amount *= 1.65
                     if alt_amount != "N/A":
-                        alt_amount = round(alt_amount * 1.65, 2)
+                        alt_amount = round(alt_amount * simon_maiia_multiplier, 2)
                 
                 elif cooking_for == karolina:
-                    si_amount *= 0.65
+                    si_amount *= 0.7
                     if alt_amount != "N/A":
-                        alt_amount = round(alt_amount * 0.65, 2)
+                        alt_amount = round(alt_amount * karolina_multiplier, 2)
                 
                 shopping_list.setdefault(ingredient, {'si': [0, row['unit']], 'alt': [0, row['alternative_unit']]})
                 shopping_list[ingredient]['si'][0] += si_amount
