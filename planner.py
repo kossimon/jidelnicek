@@ -106,14 +106,14 @@ def main():
                 
                 # Applying the multiplier for "Cooking for Maiia"
                 if cooking_for == simon_maiia:
-                    si_amount *= 1.72
+                    si_amount *= 1.65
                     if alt_amount != "N/A":
-                        alt_amount = round(alt_amount * 1.72, 2)
+                        alt_amount = round(alt_amount * 1.65, 2)
                 
                 elif cooking_for == karolina:
-                    si_amount *= 0.8
+                    si_amount *= 0.65
                     if alt_amount != "N/A":
-                        alt_amount = round(alt_amount * 0.8, 2)
+                        alt_amount = round(alt_amount * 0.65, 2)
                 
                 shopping_list.setdefault(ingredient, {'si': [0, row['unit']], 'alt': [0, row['alternative_unit']]})
                 shopping_list[ingredient]['si'][0] += si_amount
