@@ -1,0 +1,11 @@
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin: 20px; }
+.app { max-width: 900px; margin: 0 auto; }
+.controls { display: flex; gap: 20px; align-items: flex-start; }
+.radio-group { display: flex; gap: 10px; }
+.amounts { display: flex; flex-direction: column; gap: 8px; }
+.selection-row { margin: 8px 0; display: flex; gap: 8px; align-items: center; }
+.actions { display: flex; gap: 8px; margin-top: 12px; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+footer { margin-top: 24px; color: #555; }
+
